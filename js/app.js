@@ -32,9 +32,9 @@ $(document).ready(function(){
 			//Remove any previously assigned active classes
 			$('li.players').removeClass('active');
 			//Randomly assign starting user to keep game fair
-			var $li = $("ul li");
+			var li = $("ul li");
 			var rand = Math.floor(Math.random() * 2);
-			$li.eq(rand % $li.length).addClass("active");
+			li.eq(rand % li.length).addClass("active");
 			playGame();
 		});
 	}();
