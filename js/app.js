@@ -1,4 +1,4 @@
-$(document).ready(function(){	
+(function(){	
 	var playerOne = '#player1';
 	var playerTwo = '#player2';
 	var winner = "";
@@ -19,7 +19,7 @@ $(document).ready(function(){
 	$('#start, #finish').hide();
 
 	// Load the starting screen on page load
-	var startGame = function() {
+	(function() {
 		$('#start').show();
 		$('.button').on('click', function(){
 			$('#start, #finish').hide();
@@ -37,12 +37,12 @@ $(document).ready(function(){
 			li.eq(rand % li.length).addClass("active");
 			playGame();
 		});
-	}();
+	}());
 
 	// Start the gameplay
 	var playGame = function() {
 		$('.box').each(function(){
-			$(this).mouseenter(function(){ // Add the background image on hove
+			$(this).mouseenter(function(){ // Add the background image on hover
 				if ( $(playerOne).hasClass("active")) {
 					this.style.backgroundImage = "url('img/o.svg')";
 				} else {
@@ -156,4 +156,4 @@ $(document).ready(function(){
 			$("#board").hide();
 		}
 	};
-}); // End Document ready function
+}());
